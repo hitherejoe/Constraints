@@ -64,7 +64,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
 
         @Bind(R.id.image_avatar) ImageView userImage;
         @Bind(R.id.text_user_name) TextView userNameText;
-        @Bind(R.id.text_time) TextView timeText;
         @Bind(R.id.text_comment) TextView commentText;
 
         public Comment mComment;

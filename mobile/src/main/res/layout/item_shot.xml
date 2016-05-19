@@ -21,7 +21,6 @@
         app:layout_constraintTop_toTopOf="@+id/constraintLayout"
         app:layout_editor_absoluteX="0dp"
         app:layout_editor_absoluteY="0dp"
-        tools:background="@color/gray"
         tools:ignore="ContentDescription"
         tools:layout_constraintLeft_creator="0"
         tools:layout_constraintTop_creator="0"

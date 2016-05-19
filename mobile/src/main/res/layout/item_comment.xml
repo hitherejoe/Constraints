@@ -1,39 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:layout_height="90dp"
+    android:padding="8dp"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="88dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_avatar"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         app:civ_border_color="@color/colorPrimaryDark"
-        app:civ_border_width="2dp" />
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        tools:layout_constraintBottom_creator="0"
+        tools:layout_constraintLeft_creator="0"
+        tools:layout_constraintTop_creator="0"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
 
     <TextView
         android:id="@+id/text_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
         android:layout_marginStart="16dp"
-        android:layout_toEndOf="@id/image_avatar"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/text_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_toEndOf="@id/text_user_name" />
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/image_avatar"
+        app:layout_constraintTop_toTopOf="@+id/image_avatar"
+        tools:layout_constraintLeft_creator="0"
+        tools:layout_constraintTop_creator="0"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:text="hitherejoe" />
 
     <TextView
         android:id="@+id/text_comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@id/text_user_name"
-        android:layout_below="@id/text_user_name" />
+        android:layout_marginTop="4dp"
+        app:layout_constraintLeft_toLeftOf="@+id/text_user_name"
+        app:layout_constraintTop_toBottomOf="@+id/text_user_name"
+        tools:layout_constraintLeft_creator="0"
+        tools:layout_constraintTop_creator="0"
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="40dp"
+        tools:text="This is a comment" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
