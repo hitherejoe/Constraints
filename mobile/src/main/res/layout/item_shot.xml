@@ -1,66 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/shot_item_margin"
-    android:layout_marginStart="@dimen/shot_item_margin"
-    android:layout_marginEnd="@dimen/shot_item_margin"
-    android:layout_marginBottom="@dimen/shot_item_margin_bottom"
+    android:layout_height="200dp"
+    android:layout_marginBottom="8dp"
     android:background="@drawable/bg_card"
     android:elevation="2dp"
-    android:foreground="?android:attr/selectableItemBackground">
+    android:foreground="?android:attr/selectableItemBackground"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="80dp">
 
     <ImageView
         android:id="@+id/image_shot"
-        android:layout_width="match_parent"
+        android:layout_width="411dp"
         android:layout_height="200dp"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        app:layout_editor_absoluteX="0dp"
+        app:layout_editor_absoluteY="0dp"
+        tools:background="@color/gray"
+        tools:ignore="ContentDescription"
+        tools:layout_constraintLeft_creator="0"
+        tools:layout_constraintTop_creator="0"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:src="@drawable/pic" />
 
-    <RelativeLayout
-        android:id="@+id/layout_header"
-        android:layout_width="match_parent"
+    <View
+        android:layout_width="411dp"
+        android:layout_height="49dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout"
+        app:layout_constraintRight_toRightOf="@+id/constraintLayout"
+        tools:layout_constraintBottom_creator="0"
+        tools:layout_constraintLeft_creator="0"
+        tools:layout_constraintRight_creator="0"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="151dp" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/white">
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintLeft_toLeftOf="@+id/constraintLayout"
+        app:layout_constraintRight_toLeftOf="@+id/imageView"
+        tools:layout_constraintBottom_creator="0"
+        tools:layout_constraintLeft_creator="0"
+        tools:layout_constraintRight_creator="0"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="168dp"
+        tools:text="Japan" />
 
-        <TextView
-            android:id="@+id/text_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/layout_stats"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:padding="16dp"
-            android:textSize="@dimen/text_body" />
+    <TextView
+        android:id="@+id/text_like_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintRight_toRightOf="@+id/constraintLayout"
+        tools:layout_constraintBottom_creator="0"
+        tools:layout_constraintRight_creator="0"
+        tools:layout_editor_absoluteX="361dp"
+        tools:layout_editor_absoluteY="168dp"
+        tools:text="1,287" />
 
-        <RelativeLayout
-            android:id="@+id/layout_stats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:gravity="center_vertical"
-            android:padding="16dp">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_heart_accent_accent_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_like_count"
+        app:layout_constraintRight_toLeftOf="@+id/text_like_count"
+        app:layout_constraintTop_toTopOf="@+id/text_like_count"
+        tools:ignore="ContentDescription"
+        tools:layout_constraintBottom_creator="0"
+        tools:layout_constraintRight_creator="0"
+        tools:layout_constraintTop_creator="0"
+        tools:layout_editor_absoluteX="329dp"
+        tools:layout_editor_absoluteY="164dp" />
 
-            <ImageView
-                android:id="@+id/image_like"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_heart_accent_accent_24dp" />
-
-            <TextView
-                android:id="@+id/text_like_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_toEndOf="@id/image_like"
-                android:ellipsize="end"
-                android:gravity="start"
-                android:maxLines="1"
-                android:textSize="@dimen/text_body" />
-
-        </RelativeLayout>
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

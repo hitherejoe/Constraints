@@ -68,10 +68,8 @@ public class BrowseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     public class ShotViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.image_shot) ImageView shotImage;
-        @Bind(R.id.image_like) ImageView likeCountImage;
         @Bind(R.id.text_like_count) TextView likeCountText;
         @Bind(R.id.text_title) TextView viewCountText;
-        @Bind(R.id.layout_header) View viewHeader;
 
         public Shot mShot;
 
