@@ -4,37 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray">
+    android:background="@color/gray"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="80dp">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar_browse"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways" />
+            android:layout_width="411dp"
+            android:layout_height="56dp"
+            app:layout_scrollFlags="scroll|enterAlways"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="80dp" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <RelativeLayout
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_content"
+        style="@style/ArticleContentViewStyle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="56dp">
 
         <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/swipe_to_refresh"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="@+id/layout_content"
+            app:layout_constraintRight_toRightOf="@+id/layout_content"
+            app:layout_constraintTop_toTopOf="@+id/layout_content"
+            tools:layout_constraintLeft_creator="0"
+            tools:layout_constraintRight_creator="0"
+            tools:layout_constraintTop_creator="0"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="80dp"
             tools:visibility="visible">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_shots"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:padding="@dimen/content_recycler_view_padding"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="57dp"
                 tools:listitem="@layout/item_shot" />
 
         </android.support.v4.widget.SwipeRefreshLayout>
@@ -45,50 +65,79 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:paddingBottom="?attr/actionBarSize"
-            android:visibility="gone" />
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/layout_content"
+            app:layout_constraintLeft_toLeftOf="@+id/layout_content"
+            app:layout_constraintRight_toRightOf="@+id/layout_content"
+            app:layout_constraintTop_toTopOf="@+id/layout_content"
+            tools:layout_constraintBottom_creator="0"
+            tools:layout_constraintLeft_creator="0"
+            tools:layout_constraintRight_creator="0"
+            tools:layout_constraintTop_creator="0"
+            tools:layout_editor_absoluteX="205dp"
+            tools:layout_editor_absoluteY="382dp" />
 
-        <RelativeLayout
-            android:id="@+id/layout_message"
+        <ImageView
+            android:id="@+id/image_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:paddingBottom="?android:attr/actionBarSize"
-            android:visibility="gone">
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/layout_content"
+            app:layout_constraintLeft_toLeftOf="@+id/layout_content"
+            app:layout_constraintRight_toRightOf="@+id/layout_content"
+            app:layout_constraintTop_toTopOf="@+id/layout_content"
+            app:layout_constraintVertical_bias="0.19"
+            tools:ignore="ContentDescription"
+            tools:layout_constraintBottom_creator="0"
+            tools:layout_constraintLeft_creator="0"
+            tools:layout_constraintRight_creator="0"
+            tools:layout_constraintTop_creator="0"
+            tools:layout_editor_absoluteX="145dp"
+            tools:layout_editor_absoluteY="321dp"
+            tools:src="@drawable/ic_sentiment_very_dissatisfied_gray_120dp" />
 
-            <ImageView
-                android:id="@+id/image_message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                tools:src="@drawable/ic_sentiment_very_dissatisfied_gray_120dp" />
+        <TextView
+            android:id="@+id/text_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_message"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp"
+            android:gravity="center_horizontal"
+            android:padding="24dp"
+            android:textSize="@dimen/text_body"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@+id/layout_content"
+            app:layout_constraintRight_toRightOf="@+id/layout_content"
+            app:layout_constraintTop_toBottomOf="@+id/image_message"
+            tools:layout_constraintLeft_creator="0"
+            tools:layout_constraintRight_creator="0"
+            tools:layout_constraintTop_creator="0"
+            tools:layout_editor_absoluteX="205dp"
+            tools:layout_editor_absoluteY="441dp"
+            tools:text="@string/text_error_loading_shots" />
 
-            <TextView
-                android:id="@+id/text_message"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/image_message"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="24dp"
-                android:layout_marginTop="18dp"
-                android:gravity="center_horizontal"
-                android:textSize="@dimen/text_body"
-                tools:text="@string/text_error_loading_shots" />
+        <Button
+            android:id="@+id/button_message"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_message"
+            android:layout_centerHorizontal="true"
+            android:padding="16dp"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@+id/layout_content"
+            app:layout_constraintRight_toRightOf="@+id/layout_content"
+            app:layout_constraintTop_toBottomOf="@+id/text_message"
+            tools:layout_constraintLeft_creator="0"
+            tools:layout_constraintRight_creator="0"
+            tools:layout_constraintTop_creator="0"
+            tools:layout_editor_absoluteX="205dp"
+            tools:layout_editor_absoluteY="441dp"
+            tools:text="@string/text_reload" />
 
-            <Button
-                android:id="@+id/button_message"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/text_message"
-                android:layout_centerHorizontal="true"
-                android:padding="16dp"
-                android:textColor="@color/colorAccent"
-                tools:text="@string/text_reload" />
-
-        </RelativeLayout>
-
-    </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.design.widget.CoordinatorLayout>

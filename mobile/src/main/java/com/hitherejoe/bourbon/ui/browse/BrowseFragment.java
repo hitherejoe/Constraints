@@ -46,7 +46,6 @@ public class BrowseFragment extends Fragment implements BrowseMvpView,
     @Bind(R.id.swipe_to_refresh) SwipeRefreshLayout mSwipeRefreshLayout;
     @Bind(R.id.text_message) TextView mMessageText;
     @Bind(R.id.toolbar_browse) Toolbar mToolbar;
-    @Bind(R.id.layout_message) View mMessageLayout;
 
     private boolean mIsTabletLayout;
 
@@ -108,7 +107,7 @@ public class BrowseFragment extends Fragment implements BrowseMvpView,
     }
 
     @OnClick(R.id.button_message)
-    public void onReloadButtonClick() {
+    void onReloadButtonClick() {
         mBrowsePresenter.getShots(BrowsePresenter.SHOT_COUNT, BrowsePresenter.SHOT_PAGE);
     }
 
@@ -162,7 +161,9 @@ public class BrowseFragment extends Fragment implements BrowseMvpView,
 
     @Override
     public void showMessageLayout(boolean show) {
-        mMessageLayout.setVisibility(show ? View.VISIBLE : View.GONE);
+        mMessageImage.setVisibility(show ? View.VISIBLE : View.GONE);
+        mMessageButton.setVisibility(show ? View.VISIBLE : View.GONE);
+        mMessageText.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
 }
