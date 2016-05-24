@@ -1,1 +1,1 @@
-include ':mobile', ':CoreCommon', ':AndroidTestCommon', ':mobile-androidTest'
+include ':mobile', ':CoreCommon'

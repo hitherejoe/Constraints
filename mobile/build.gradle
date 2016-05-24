@@ -61,9 +61,6 @@ dependencies {
 
     provided 'org.glassfish:javax.annotation:10.0-b28' //Required by Dagger2
 
-    // Instrumentation test dependencies
-    androidTestCompile project(':AndroidTestCommon')
-
     // APT dependencies
     apt daggerCompiler
 }
