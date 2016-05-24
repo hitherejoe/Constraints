@@ -10,6 +10,8 @@
 
     <style name="RecentCommentsStyle">
         <item name="android:background">@color/white</item>
+        <item name="android:layout_marginLeft">@dimen/article_content_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/article_content_horizontal_margin</item>
     </style>
 
 </resources>
