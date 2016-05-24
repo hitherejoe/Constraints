@@ -3,10 +3,17 @@ Constraints
 [![Build Status](https://travis-ci.org/hitherejoe/Bourbon.svg?branch=master)](https://travis-ci.org/hitherejoe/Bourbon) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Bourbon-brightgreen.svg?style=flat)](http://android-arsenal.com/details/3/3544) [![Sidebar] (https://img.shields.io/badge/Sidebar-06%2F05%2F2016-orange.svg)](http://sidebar.io/2016/5/6)
 
 <p align="center">
-    <img src="images/constrainlayout.png" alt="Bourbon Header"/>
+    <img src="images/constraintlayout.png" alt="Bourbon Header"/>
 </p>
 
 An implementation of [Bourbon](https://github.com/hitherejoe/Bourbon) for Android Mobile, with the use of the new ConstraintLayout where possible for demonstration purposes.
+
+The layout files can be found here:
+
+- [Browse Fragment](https://github.com/hitherejoe/Constraints/blob/master/mobile/src/main/res/layout/fragment_browse.xml)
+- [Shot Fragment](https://github.com/hitherejoe/Constraints/blob/master/mobile/src/main/res/layout/fragment_shot.xml)
+- [Comment Item](https://github.com/hitherejoe/Constraints/blob/master/mobile/src/main/res/layout/item_comment.xml)
+- [Shot Item](https://github.com/hitherejoe/Constraints/blob/master/mobile/src/main/res/layout/item_shot.xml)
 
 <p align="center">
     <img src="images/bourbon.png" alt="Bourbon Header"/>
